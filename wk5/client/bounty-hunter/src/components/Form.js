@@ -44,6 +44,7 @@ class Form extends React.Component {
       type: this.state.type
     }
     axios.post("/bounties", bounty)
+    .then(res => this.props.getBounties())
   }
 
   render() {

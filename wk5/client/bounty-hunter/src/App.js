@@ -1,22 +1,24 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css';
 import Bounty from './components/Bounty'
 import Form from './components/Form'
 
-function App () {
-  const [ bounties, setBounties] = useState([])
+function App() {
+  const [bounties, setBounties] = useState([])
 
-  useEffect(() => {
+  function getBounties () {
     axios.get("/bounties")
-    .then(res => setBounties(res.data))
-    .catch(err => console.log(err))
-  })
+      .then(res => setBounties(res.data))
+  }
+  useEffect(() => {
+    getBounties()
+  }, [])
 
   return (
     <div>
-      <Form />
-      { bounties.map(bounty => <Bounty {...bounty} key={bounty._id}/>)}
+      <Form getBounties={getBounties}/>
+      { bounties.map(bounty => <Bounty getBounties={getBounties} {...bounty} key={bounty._id} />)}
     </div>
   )
 }

@@ -25,12 +25,12 @@ class Bounty extends React.Component {
     const id = this.props._id
     axios.put(`/bounties/${id}`, { bounty: this.state.bounty })
       .then(res => {
-        this.setState({
-          isEditing: false,
-          bounty: 0
-        })
-        console.log(res)
+        this.props.getBounties()
       })
+      .then(this.setState({
+        ...this.state,
+        isEditing: false
+      }))
       .catch(err => console.log(err))
 
   }
@@ -45,11 +45,8 @@ class Bounty extends React.Component {
         <h3>Type of Species: {this.props.type}</h3>
 
 
-        {this.state.isEditing ? <form onSubmit={this.handlePut}><input onChange={this.handleChange} name="bounty" type="text" placeholder="Enter new Bounty"></input><button>Save</button></form> :
-
-          <h3>Bounty: {this.props.bounty}</h3>}
-
-
+        {this.state.isEditing ? <form onSubmit={this.handlePut}><input onChange={this.handleChange} name="bounty" type="text" placeholder="Enter new Bounty"></input><button>Save</button></form> : <h3>Bounty: {this.props.bounty}</h3>}
+        
         <button onClick={() => {
           this.setState({
             ...this.state,
@@ -61,6 +58,8 @@ class Bounty extends React.Component {
           onClick={(e) => {
             const id = this.props._id
             axios.delete(`/bounties/${id}`)
+            .then(res => this.props.getBounties())
+            .catch(err => console.log(err))
           }}>Delete
         </button>
 
