@@ -20,7 +20,7 @@ class Form extends React.Component {
     const {name, value} = event.target
     this.setState({
       [name]: value
-    })
+    }) 
   }
 
   handleDropDown(event){

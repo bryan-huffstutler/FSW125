@@ -40,10 +40,9 @@ class Bounty extends React.Component {
       <div className="bounties">
         <h2>{`${this.props.firstName} ${this.props.lastName}`}</h2>
 
-        <h3>Alive: {this.props.living ? "Yes" : "No"}</h3>
+        <h3>Alive: {this.props.living ? "Yes" : "No" }</h3>
 
         <h3>Gang: {this.props.gang}</h3>
-
 
         {this.state.isEditing ? <form onSubmit={this.handlePut}><input onChange={this.handleChange} name="bounty" type="text" placeholder="Enter new Bounty"></input><button>Save</button></form> : <h3>Bounty: {this.props.bounty}</h3>}
         

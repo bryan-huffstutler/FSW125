@@ -7,7 +7,7 @@ const bounties = [
     firstName: "Jesus",
     lastName: "Hernandez",
     living: true,
-    bounty: 200000,
+    bounty: "$35.00",
     gang: "Hernandez Cartel",
     _id: uuid()
   },
@@ -15,7 +15,7 @@ const bounties = [
     firstName: "Dean",
     lastName: "Wilcoxson",
     living: false,
-    bounty: 150500,
+    bounty: "$50.00",
     gang: "Wilco Gang",
     _id: uuid()
   },
@@ -23,7 +23,7 @@ const bounties = [
     firstName: "Vanessa",
     lastName: "Caraballo",
     living: true,
-    bounty: 5000000,
+    bounty: "$45.00",
     gang: "Death Blossoms",
     _id: uuid()
   },
@@ -31,7 +31,7 @@ const bounties = [
     firstName: "Carlos",
     lastName: "Robinson",
     living: true,
-    bounty: 5000000,
+    bounty: "$35.00",
     gang: "Kings of the South",
     _id: uuid()
   },
@@ -39,7 +39,7 @@ const bounties = [
     firstName: "Jeny",
     lastName: "Plasencia",
     living: true,
-    bounty: 5000000,
+    bounty: "$65.00",
     gang: "Care Bears of Doom",
     _id: uuid()
   },
@@ -47,7 +47,7 @@ const bounties = [
     firstName: "Claudia",
     lastName: "Evans",
     living: true,
-    bounty: 5000000,
+    bounty: "$55.00",
     gang: "Kiss of Death",
     _id: uuid()
   }
