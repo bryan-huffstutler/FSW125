@@ -46,6 +46,14 @@ function App() {
     .catch(err => console.log(err))
   }
 
+  function handleDelete (event){
+    event.preventDefault()
+    const id=event.target.parentNode.id
+    axios.delete(`/items/${id}`)
+    .then(getItems)
+    .catch(err => console.log(err))
+  }
+
   useEffect(() => {
     getItems()
   }, [])
@@ -60,6 +68,7 @@ function App() {
           key={item._id}
           costPut={handleCostPut}
           soldPut={handleSoldPut}
+          delete={handleDelete}
         />)}
       </div>
       

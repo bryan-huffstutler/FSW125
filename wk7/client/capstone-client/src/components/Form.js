@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import Item from './Item'
 
 class Form extends React.Component {
   
@@ -8,6 +7,7 @@ class Form extends React.Component {
     super()
     this.state=({
       name: "",
+      image: "",
       cost: 0,
       color1: "",
       color2: "",
@@ -29,6 +29,7 @@ class Form extends React.Component {
     event.preventDefault()
     const item = {
       name: this.state.name,
+      image: this.state.image,
       cost: this.state.cost,
       colors: [this.state.color1, this.state.color2],
       type: this.state.type
@@ -40,50 +41,60 @@ class Form extends React.Component {
 
   render () {
     return (
-      <div>
+      <div id="inputForm">
         <form onSubmit={this.handleSubmit}>
-          <label>Enter Items Name
+          <label>Enter Items Name</label><br/>
             <input
               onChange={this.handleChange}
               type="text"
               name="name"
               placeholder="Enter Name of Item"
             />
-          </label>
+          <br/>
 
-          <label>Enter Items Cost
+          <label>Enter Items Image</label><br/>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="image"
+              placeholder="Enter Items Image"
+            />
+          <br/>
+
+          <label>Enter Items Cost</label><br/>
             <input
               onChange={this.handleChange}
               type="number"
               name="cost"
               placeholder="Enter Cost of Item"
             />
-          </label>
+          <br/>
 
-          <label>Enter Type of Item
+          <label>Enter Type of Item</label><br/>
             <input
               onChange={this.handleChange}
               type="text"
               name="type"
               placeholder="Enter Type of Item"
-            />
-          </label>
+            /><br/>
+          
 
-          <label>Enter Items Available Colors: 
+          <label>Enter Items Available Colors: </label><br/>
             <input
               onChange={this.handleChange}
               type="text"
               name="color1"
               placeholder="Enter Color of Item"
-            />
+            /><br/>
             <input
               onChange={this.handleChange}
               type="text"
               name="color2"
               placeholder="Enter Color of Item"
-            />
-          </label>
+            /><br/>
+          
           <button>Add Item</button>
+          <hr/>
         </form>
 
         <form onSubmit={(event)=> this.props.handleFilter(event, this.state.filter)}>

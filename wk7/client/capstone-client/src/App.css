@@ -1,38 +1,59 @@
-.App {
+body{
+  margin: 0;
+  padding: 0;
+  background-color: grey;
+}
+
+form {
+  margin: 20px;
+  padding: 8px;
+}
+
+#inputForm {
+  background-color: rgba(0, 255, 136, 0.13);
+  padding: 15px;
   text-align: center;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#inputForm > form > input {
+  margin: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.items {  
+  background-color: rgba(226, 25, 25, 0.699);
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 2px 8px 20px black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.items > h2, h5 {
   color: white;
+  text-shadow: 2px 2px 7px black;
 }
 
-.App-link {
-  color: #61dafb;
+#items {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr)
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+img {
+  width: 200px;
+  height: 200px;
+}
+
+@media only screen and (min-width: 500px){
+  #items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (min-width: 750px){
+  #items {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr)
   }
 }
