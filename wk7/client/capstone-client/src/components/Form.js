@@ -103,8 +103,7 @@ class Form extends React.Component {
               <option value="Electronics">Electronics</option>
               <option value="Furniture">Furniture</option>
               <option value="Food">Food</option>
-              <option value="Games">Games</option>            
-              
+              <option value="Games">Games</option>          
             </select>
           </label>
           <button>Filter!</button>          
